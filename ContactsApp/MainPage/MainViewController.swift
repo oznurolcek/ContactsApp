@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var contactsTableView: UITableView!
     
-    var contacts: [String] = ["ayse", "fatma","hayriye"]
+    var contacts: [Contacts] = Contacts.contacts
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,13 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 3
+//    }
+//
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return Contacts.Sections.allCases[section].sections
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contacts.count
@@ -45,8 +49,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactsTVCell", for: indexPath) as! ContactsCell
-        cell.contactNameLabel.text = contacts[indexPath.row]
-        //cell.contactImage.image = UIImage()
+        cell.contactNameLabel.text = contacts[indexPath.row].contactName
+        cell.contactImage.image = UIImage(named: String(describing: contacts[indexPath.row].contactImageName))
         return cell
     }
     
