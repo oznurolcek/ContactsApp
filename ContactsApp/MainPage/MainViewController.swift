@@ -65,6 +65,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactsTVCell", for: indexPath) as! ContactsCell
         cell.contactNameLabel.text = filterContacts(indexPath.section)[indexPath.row].contactName
+        cell.contactPhoneLabel.text = filterContacts(indexPath.section)[indexPath.row].contactPhoneNumber
         cell.contactImage.image = UIImage(named: String(describing: filterContacts(indexPath.section)[indexPath.row].contactImageName))
         return cell
     }

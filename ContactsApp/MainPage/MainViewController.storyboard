@@ -34,24 +34,43 @@
                                                         <constraint firstAttribute="width" constant="50" id="CBE-gi-2E7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTr-QC-rNf">
-                                                    <rect key="frame" x="66" y="24.333333333333329" width="43.666666666666657" height="21.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vJ-ZE-WjI">
+                                                    <rect key="frame" x="65.999999999999986" y="11" width="230.66666666666663" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="d2Z-si-P6d"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTp-Xf-ZLY">
+                                                    <rect key="frame" x="65.999999999999986" y="34" width="230.66666666666663" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="CzV-ec-V69"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="3vJ-ZE-WjI" firstAttribute="centerX" secondItem="8So-PJ-mlR" secondAttribute="centerX" id="2r5-QU-fp3"/>
+                                                <constraint firstItem="QTp-Xf-ZLY" firstAttribute="centerX" secondItem="8So-PJ-mlR" secondAttribute="centerX" id="7st-LP-CUM"/>
                                                 <constraint firstItem="YZN-oW-WRD" firstAttribute="leading" secondItem="8So-PJ-mlR" secondAttribute="leading" constant="8" id="8Fp-fZ-OiX"/>
-                                                <constraint firstItem="lTr-QC-rNf" firstAttribute="centerY" secondItem="8So-PJ-mlR" secondAttribute="centerY" id="9EB-ZW-EEZ"/>
-                                                <constraint firstItem="lTr-QC-rNf" firstAttribute="leading" secondItem="YZN-oW-WRD" secondAttribute="trailing" constant="8" id="euv-XN-jEV"/>
+                                                <constraint firstItem="QTp-Xf-ZLY" firstAttribute="leading" secondItem="YZN-oW-WRD" secondAttribute="trailing" constant="8" id="Hk7-gn-ZVR"/>
+                                                <constraint firstItem="3vJ-ZE-WjI" firstAttribute="centerX" secondItem="8So-PJ-mlR" secondAttribute="centerX" id="Lon-68-j85"/>
+                                                <constraint firstItem="3vJ-ZE-WjI" firstAttribute="top" secondItem="8So-PJ-mlR" secondAttribute="topMargin" id="Q5O-KO-cG7"/>
+                                                <constraint firstItem="3vJ-ZE-WjI" firstAttribute="leading" secondItem="YZN-oW-WRD" secondAttribute="trailing" constant="8" id="Wmf-N5-5F0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QTp-Xf-ZLY" secondAttribute="bottom" constant="8" id="k33-In-lRv"/>
                                                 <constraint firstItem="YZN-oW-WRD" firstAttribute="top" secondItem="8So-PJ-mlR" secondAttribute="top" id="qLg-aj-M99"/>
                                                 <constraint firstAttribute="bottom" secondItem="YZN-oW-WRD" secondAttribute="bottom" id="spL-s8-Gjr"/>
+                                                <constraint firstItem="3vJ-ZE-WjI" firstAttribute="leading" secondItem="YZN-oW-WRD" secondAttribute="trailing" constant="8" id="xEu-U4-zJa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contactImage" destination="YZN-oW-WRD" id="E5c-gT-Sho"/>
-                                            <outlet property="contactNameLabel" destination="lTr-QC-rNf" id="Agk-MM-mpF"/>
+                                            <outlet property="contactNameLabel" destination="3vJ-ZE-WjI" id="gMN-aM-6on"/>
+                                            <outlet property="contactPhoneLabel" destination="QTp-Xf-ZLY" id="4Sa-bf-9Sv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
