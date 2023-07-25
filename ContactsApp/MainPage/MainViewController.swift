@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle.fill"), style: .done, target: self, action: #selector(filterButtonAct))
+        let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"), style: .done, target: self, action: #selector(filterButtonAct))
         navigationItem.rightBarButtonItem = filterButton
         
         contactsTableView.dataSource = self
@@ -25,11 +25,20 @@ class MainViewController: UIViewController {
     }
     
     @objc func filterButtonAct() {
-        print("Tıklandı")
+        let storyboard = UIStoryboard(name: "PickerViewController", bundle: nil)
+        if let pickerVC = storyboard.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController {
+            pickerVC.modalPresentationStyle = .overCurrentContext
+            self.present(pickerVC, animated: true)
+        }
     }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contacts.count
     }
@@ -39,6 +48,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contactNameLabel.text = contacts[indexPath.row]
         //cell.contactImage.image = UIImage()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

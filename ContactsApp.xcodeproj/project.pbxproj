@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8958F6E32A6FFCAD000878AA /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8958F6E22A6FFCAD000878AA /* PickerViewController.swift */; };
+		8958F6E52A6FFCBB000878AA /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8958F6E42A6FFCBB000878AA /* PickerViewController.storyboard */; };
 		89EAF8DB2A6EA039001DAE63 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EAF8DA2A6EA039001DAE63 /* MainViewController.swift */; };
 		89EAF8DD2A6EA046001DAE63 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89EAF8DC2A6EA045001DAE63 /* MainViewController.storyboard */; };
 		89EAF8DF2A6EA057001DAE63 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EAF8DE2A6EA057001DAE63 /* DetailViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8958F6E22A6FFCAD000878AA /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		8958F6E42A6FFCBB000878AA /* PickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickerViewController.storyboard; sourceTree = "<group>"; };
 		89EAF8DA2A6EA039001DAE63 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		89EAF8DC2A6EA045001DAE63 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		89EAF8DE2A6EA057001DAE63 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -47,13 +51,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8958F6E12A6FFC95000878AA /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				8958F6E22A6FFCAD000878AA /* PickerViewController.swift */,
+				8958F6E42A6FFCBB000878AA /* PickerViewController.storyboard */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		89EAF8D82A6E9FF4001DAE63 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				8958F6E12A6FFC95000878AA /* PickerView */,
 				89EAF8DA2A6EA039001DAE63 /* MainViewController.swift */,
 				89EAF8DC2A6EA045001DAE63 /* MainViewController.storyboard */,
 				89EAF8E52A6EA739001DAE63 /* ContactsCell.swift */,
-				89EAF8E72A6EA753001DAE63 /* Contacts.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 				89EAF8D92A6EA004001DAE63 /* DetailPage */,
 				89F03F762A6B01F40005D51B /* AppDelegate.swift */,
 				89F03F782A6B01F40005D51B /* SceneDelegate.swift */,
+				89EAF8E72A6EA753001DAE63 /* Contacts.swift */,
 				89F03F822A6B01F50005D51B /* Assets.xcassets */,
 				89F03F842A6B01F50005D51B /* LaunchScreen.storyboard */,
 				89F03F872A6B01F50005D51B /* Info.plist */,
@@ -160,6 +174,7 @@
 				89F03F862A6B01F50005D51B /* LaunchScreen.storyboard in Resources */,
 				89EAF8E12A6EA067001DAE63 /* DetailViewController.storyboard in Resources */,
 				89F03F832A6B01F50005D51B /* Assets.xcassets in Resources */,
+				8958F6E52A6FFCBB000878AA /* PickerViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +187,7 @@
 			files = (
 				89F03F812A6B01F40005D51B /* ContactsApp.xcdatamodeld in Sources */,
 				89F03F772A6B01F40005D51B /* AppDelegate.swift in Sources */,
+				8958F6E32A6FFCAD000878AA /* PickerViewController.swift in Sources */,
 				89EAF8E62A6EA739001DAE63 /* ContactsCell.swift in Sources */,
 				89EAF8DF2A6EA057001DAE63 /* DetailViewController.swift in Sources */,
 				89F03F792A6B01F40005D51B /* SceneDelegate.swift in Sources */,
