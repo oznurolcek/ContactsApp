@@ -28,16 +28,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3w-G6-TMx">
                                         <rect key="frame" x="0.0" y="582" width="393" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAl-Ei-nIK">
-                                                <rect key="frame" x="320" y="0.0" width="65" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Done">
-                                                    <color key="baseForegroundColor" red="0.96862745289999996" green="0.79607844350000001" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="doneButtonAct:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iPb-Te-7Rn"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-3Y-lTh">
                                                 <rect key="frame" x="8" y="0.0" width="76.666666666666671" height="50"/>
                                                 <state key="normal" title="Button"/>
@@ -48,9 +38,21 @@
                                                     <action selector="cancelButtonAct:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UVR-Af-aZF"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtN-vu-MBf">
-                                                <rect key="frame" x="175" y="15" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAl-Ei-nIK">
+                                                <rect key="frame" x="320" y="0.0" width="65" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                                    <color key="baseForegroundColor" red="0.96862745289999996" green="0.79607844350000001" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="doneButtonAct:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iPb-Te-7Rn"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViK-HO-cne">
+                                                <rect key="frame" x="0.0" y="12.666666666666629" width="393" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="4TN-Bt-gSX"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -58,8 +60,11 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647058959999999" green="0.99215686319999996" blue="0.83137255909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="ViK-HO-cne" firstAttribute="leading" secondItem="O3w-G6-TMx" secondAttribute="leading" id="1Rg-8K-Tyw"/>
                                             <constraint firstAttribute="height" constant="50" id="22d-Hr-mAm"/>
+                                            <constraint firstItem="ViK-HO-cne" firstAttribute="centerY" secondItem="jAl-Ei-nIK" secondAttribute="centerY" id="6AH-r7-iXR"/>
                                             <constraint firstAttribute="trailing" secondItem="jAl-Ei-nIK" secondAttribute="trailing" constant="8" id="Fvq-71-kn9"/>
+                                            <constraint firstAttribute="trailing" secondItem="ViK-HO-cne" secondAttribute="trailing" id="GMi-iL-f7o"/>
                                             <constraint firstAttribute="bottom" secondItem="rxS-3Y-lTh" secondAttribute="bottom" id="NZK-1x-zhG"/>
                                             <constraint firstItem="jAl-Ei-nIK" firstAttribute="top" secondItem="O3w-G6-TMx" secondAttribute="top" id="NuH-2w-dDs"/>
                                             <constraint firstItem="rxS-3Y-lTh" firstAttribute="leading" secondItem="O3w-G6-TMx" secondAttribute="leading" constant="8" id="PUU-ox-fCM"/>
@@ -90,7 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="filterPickerView" destination="5ad-mN-yJf" id="7ES-rj-O92"/>
-                        <outlet property="sectionLabel" destination="AtN-vu-MBf" id="Ho3-eH-Z1V"/>
+                        <outlet property="sectionLabel" destination="ViK-HO-cne" id="fDK-5J-Fud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

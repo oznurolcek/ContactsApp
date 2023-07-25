@@ -7,21 +7,30 @@
 
 import UIKit
 
+protocol PickerViewControllerDelegate {
+    func didSelectSection(_ section: Sections)
+}
+
 class PickerViewController: UIViewController {
 
     @IBOutlet weak var filterPickerView: UIPickerView!
     
     @IBOutlet weak var sectionLabel: UILabel!
+    
+    private var selectedSection: Sections?
+    
+    var delegate: PickerViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        filterPickerView.delegate = self
-//        filterPickerView.dataSource = self
+        filterPickerView.delegate = self
+        filterPickerView.dataSource = self
     }
     
     @IBAction func doneButtonAct(_ sender: UIButton) {
-        
+        delegate?.didSelectSection(selectedSection ?? .allContacts)
+        dismiss(animated: true)
     }
     
     @IBAction func cancelButtonAct(_ sender: UIButton) {
@@ -37,7 +46,16 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        Contacts.contacts.count
+        return Sections.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Sections.allCases[row].sections
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedSection = Sections.allCases[row]
+        sectionLabel.text = selectedSection?.sections
     }
 
 
