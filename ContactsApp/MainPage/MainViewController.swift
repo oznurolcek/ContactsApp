@@ -71,11 +71,30 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
+        
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            let contactName = filterContacts(indexPath.section)[indexPath.row].contactName
+            let contactImageName = filterContacts(indexPath.section)[indexPath.row].contactImageName.imageName
+            let contactPhoneNumber = filterContacts(indexPath.section)[indexPath.row].contactPhoneNumber
+            let contactSection = filterContacts(indexPath.section)[indexPath.row].contactSection.sections
+            let selectedContacts = filterContacts(indexPath.section)
+            
+            
+            
+            detailVC.contactName = contactName
+            detailVC.contactImageName = contactImageName
+            detailVC.contactPhoneNumber = contactPhoneNumber
+            detailVC.contactSection = contactSection
+            detailVC.selectedContacts = selectedContacts
+            
+ 
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     
     private func setSections() -> [Sections] {
-        if selectedSection == nil {
+        if selectedSection == nil || selectedSection == .allContacts {
             return Sections.allCases
         } else {
             return [selectedSection!]
@@ -83,7 +102,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func filterContacts(_ sectionIndex: Int) -> [Contacts] {
-        if selectedSection == nil {
+        if selectedSection == nil || selectedSection == .allContacts {
             return Contacts.contacts.filter({ $0.contactSection == Sections.allCases[sectionIndex]})
         } else {
             return Contacts.contacts.filter({ $0.contactSection == selectedSection})
